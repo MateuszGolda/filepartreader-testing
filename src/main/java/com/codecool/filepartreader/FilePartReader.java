@@ -1,14 +1,16 @@
 package com.codecool.filepartreader;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class FilePartReader {
-    String filePath;
-    Integer fromLine;
-    Integer toLine;
+    private String filePath;
+    private Integer fromLine;
+    private Integer toLine;
 
     FilePartReader() {
-        setup("filepath", 1, 0);
+        setup("text.txt", 1, 1);
     }
 
     /**
@@ -24,22 +26,25 @@ public class FilePartReader {
     }
 
     /**
-     * opens the file on filePath, and gives back it's content as a String
-     *
-     * @return
+     * @return content of file on filePath
      * @throws IOException if the file isn't present on filePath
      */
     public String read() throws IOException {
-        return null;
+        return new String(Files.readAllBytes(Paths.get(filePath)));
     }
 
     /**
-     * reads the file with read ()
-     * it gives back every line from it's content between fromLine and toLine (both of them are included), and returns these lines as a String. Take care because if fromLine is 1, it means the very first row in the file. Also, if fromLine is 1 and toLine is 1 also, we will read only the very first line.
+     * Reads the file with read(), and gives back every line from it's content between fromLine and toLine (both included).
+     * Returns these lines as a String.
      *
-     * @return
+     * @return every line from file content between fromLine and toLine (both of them are included)
      */
-    public String readLines() {
-        return null;
+    public String readLines() throws IOException {
+        String[] lines = read().split("\n");
+        var sb = new StringBuilder();
+        for (int i = fromLine; i <= toLine; i++) {
+            sb.append(lines[i - 1]).append("\n");
+        }
+        return sb.toString();
     }
 }
