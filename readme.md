@@ -13,20 +13,18 @@ readers. :) Your job is to implement 2 classes and cover them with tests.
 
 #### It has three instance methods:
 
-- public void **setup** ()
-  - it's parameters are:
-    - _filePath_ as a String
-    - _fromLine_ as an Integer
-    - _toLine_ as an Integer
+- public void **setup(String filePath, Integer fromLine, Integer toLine)**
   - it throws an _IllegalArgumentException_ :
     - if _toLine_ is smaller than _fromLine_
     - if _fromLine_ is smaller than 1
-- public String **read** ()
+    
+- public String **read()**
   - opens the file on _filePath_ , and gives back it's content as a String
   - it doesn't catch the exception being raised, if the file isn't present on
     _filePath_, we can expect an `IOException`
-- public String **readLines** ():
-  - reads the file with **read** ()
+    
+- public String **readLines()**:
+  - reads the file with **read()**
   - it gives back every line from its content between _fromLine_ and _toLine_
     (both of them are included), and returns these lines as a String. Take care
     because if _fromLine_ is 1, it means the very first row in the file. Also,
@@ -41,14 +39,16 @@ readers. :) Your job is to implement 2 classes and cover them with tests.
 
 #### It has three instance methods:
 
-- public List **getWordsOrderedAlphabetically** ():
-  - calls **FilePartReader.readLines** ()
+- public List **getWordsOrderedAlphabetically()**:
+  - calls **FilePartReader.readLines()**
   - returns the words ordered by alphabetically as an ArrayList
-- public List **getWordsContainingSubstring** (String _subString_ ):
-  - calls **FilePartReader.readLines** ()
+  
+- public List **getWordsContainingSubstring(String _subString_)**:
+  - calls **FilePartReader.readLines()**
   - returns the words which contains the _subString_
-- public List **getStringsWhichPalindromes** ():
-  - calls **FilePartReader.readLines** ()
+  
+- public List **getStringsWhichPalindromes()**:
+  - calls **FilePartReader.readLines()**
   - returns the words from the String which are palindrome
 
 ## Testing
