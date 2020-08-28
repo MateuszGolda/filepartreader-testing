@@ -66,4 +66,9 @@ class FilePartReaderTest {
     void should_ThrowIllegalArgumentException_ForNegativeFromLine() {
         assertThrows(IllegalArgumentException.class, () -> reader.setup("src/test/java/com/codecool/filepartreader/text.txt", -1, 1));
     }
+
+    @Test
+    void should_ThrowIllegalArgumentException_ForFromLineGreaterThanToLine() {
+        assertThrows(IllegalArgumentException.class, () -> reader.setup("src/test/java/com/codecool/filepartreader/text.txt", 2, 1));
+    }
 }
