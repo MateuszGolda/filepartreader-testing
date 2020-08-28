@@ -42,7 +42,7 @@ class FileWordAnalyzerTest {
     }
 
     @Test
-    void should_ReturnWordsOrderedAlphabetically_ForFirstLineInTestFile() {
+    void should_ReturnWordsOrderedAlphabetically_ForTestFile() {
         var words = Arrays.asList("1", "for", "Line", "more", "Rotator", "some", "sorting", "words");
         var words2 = Arrays.asList("4", "civic", "deified", "kayak", "level", "Line", "radar", "reviver", "rotor");
         var words3 = Arrays.asList("1", "2", "3", "4", "civic", "deified", "for", "kayak", "level", "Line", "Line", "Line", "Line", "more", "radar", "reviver", "Rotator", "rotor", "some", "sorting", "words");
@@ -53,7 +53,7 @@ class FileWordAnalyzerTest {
     }
 
     @Test
-    void should_ReturnPalindromes_ForFirstLineInTestFile() {
+    void should_ReturnPalindromes_ForTestFile() {
         var words = Arrays.asList("1", "Rotator");
         var words2 = Arrays.asList("4", "deified", "civic", "radar", "level", "rotor", "kayak", "reviver");
         var words3 = Arrays.asList("1", "Rotator", "2", "3", "4", "deified", "civic", "radar", "level", "rotor", "kayak", "reviver");
@@ -64,7 +64,7 @@ class FileWordAnalyzerTest {
     }
 
     @Test
-    void should_ReturnWordsContainingSubstring_ForFirstLineInTestFile() {
+    void should_ReturnWordsContainingSubstring_ForTestFile() {
         var containingSo = Arrays.asList("some", "sorting");
         var containingSo2 = Collections.emptyList();
         var containingOr = Arrays.asList("more", "words", "for", "sorting", "Rotator", "rotor");
